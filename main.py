@@ -1,14 +1,15 @@
 import json
 import logging
 
-# ---------------- Setup Logging ----------------
 logging.basicConfig(
     filename="app.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-# ---------------- Save/Load Functions ----------------
+logging.info("Test log entry — logging is working!")
+
+
 def load_tasks(filename="tasks.txt"):
     """Load tasks from file if it exists."""
     try:
@@ -23,7 +24,6 @@ def save_tasks(tasks, filename="tasks.txt"):
     with open(filename, "w") as file:
         json.dump(tasks, file, indent=4)
 
-# ---------------- Main App ----------------
 def main():
     tasks = load_tasks()  # Load tasks when app starts
 
